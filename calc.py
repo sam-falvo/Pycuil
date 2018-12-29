@@ -64,6 +64,8 @@ class CalcApp(object):
     def redraw(self):
         ui = self.ui
 
+        ui.clear()
+
         self.done = ui.button(0, 2, "Q", "Q")
 
         if ui.button(8, 2, "C", "C"):
@@ -91,7 +93,6 @@ class CalcApp(object):
                 self.handle_op(op.label)
 
         ui.label(0, 0, (("_"*15)+self.readout)[-15:])
-
         ui.refresh()
 
     def start(self, ui):
